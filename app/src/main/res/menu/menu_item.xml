@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/recent"
+        android:title="Recent"
+        android:icon="@drawable/baseline_access_time">
+    </item>
+    <item
+        android:id="@+id/contacts"
+        android:title="Contacts"
+        android:icon="@drawable/baseline_group">
+    </item>
+</menu>
