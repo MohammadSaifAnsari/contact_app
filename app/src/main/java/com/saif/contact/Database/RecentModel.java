@@ -10,7 +10,7 @@ import java.sql.Blob;
 @Entity(tableName = "RecentList")
 public class RecentModel {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
     @ColumnInfo(name = "FirstName")

@@ -21,6 +21,7 @@ import com.google.android.material.imageview.ShapeableImageView;
 import com.saif.contact.ContactInfoActivity;
 import com.saif.contact.Database.ContactModel;
 import com.saif.contact.Database.DatabaseHelper;
+import com.saif.contact.Database.RecentModel;
 import com.saif.contact.R;
 
 import java.util.ArrayList;
@@ -51,16 +52,27 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         holder.phonenumber.setText(contactModel.getPhoneNo());
         holder.proImg.setImageBitmap(getImage(contactModel.getProfileImg()));
 
+
+
+
         holder.callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:"+ holder.phonenumber.getText().toString().trim()));
                 context.startActivity(intent);
-                ArrayList<ContactModel> recentList = new ArrayList<ContactModel>();
-                recentList.add(contactModel);
-                databaseHelper.recentDao().addContact(contactModel);
 
+                String fname = contactModel.getFirstname();
+                String sname = contactModel.getSurname();
+                String pnumber = contactModel.getPhoneNo();
+                byte[] pic = contactModel.getProfileImg();
+                String email = contactModel.getEmail();
+
+                RecentModel recentModel = new RecentModel(fname,sname,pnumber,email,pic);
+
+                ArrayList<RecentModel> recentList = new ArrayList<RecentModel>();
+                recentList.add(recentModel);
+                databaseHelper.recentDao().addContact(recentModel);
             }
         });
 

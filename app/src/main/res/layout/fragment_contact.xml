@@ -13,7 +13,9 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:hint="Search..."
-          android:layout_margin="10dp">
+          android:layout_margin="10dp"
+          android:background="@drawable/searchbar_round"
+          android:padding="5dp">
       </androidx.appcompat.widget.SearchView>
 
       <androidx.recyclerview.widget.RecyclerView

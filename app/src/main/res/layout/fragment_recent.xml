@@ -8,12 +8,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.google.android.material.search.SearchBar
+        <androidx.appcompat.widget.SearchView
             android:id="@+id/searchbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Search...">
-        </com.google.android.material.search.SearchBar>
+            android:hint="Search..."
+            android:layout_margin="10dp"
+            android:background="@drawable/searchbar_round"
+            android:padding="5dp">
+        </androidx.appcompat.widget.SearchView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv1"

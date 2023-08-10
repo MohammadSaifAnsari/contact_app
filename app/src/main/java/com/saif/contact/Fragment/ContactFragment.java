@@ -65,6 +65,8 @@ public class ContactFragment extends Fragment {
             }
         });
 
+        fragmentContactBinding.searchbar.setIconifiedByDefault(false);
+
         fragmentContactBinding.searchbar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

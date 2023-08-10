@@ -15,7 +15,7 @@ public interface RecentDao {
     List<RecentModel> getRecentList();
 
     @Insert
-    void addContact(ContactModel contactModel);
+    void addContact(RecentModel recentModel);
 
     @Update
     void  updateContact(RecentModel recentModel);

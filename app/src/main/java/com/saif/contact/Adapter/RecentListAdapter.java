@@ -109,7 +109,8 @@ public class RecentListAdapter extends RecyclerView.Adapter<RecentListAdapter.Vi
     private static Bitmap getImage(byte[] image) {
         return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
-    public void  filterList(ArrayList<RecentModel>filterlist){
+
+    public void  queryList(ArrayList<RecentModel> filterlist){
         this.recentList = filterlist;
         notifyDataSetChanged();
     }
